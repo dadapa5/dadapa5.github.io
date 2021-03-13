@@ -155,7 +155,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/13/test/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/13/%E4%BD%BF%E7%94%A8Cryptdll%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6md5%E5%80%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -169,7 +169,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/13/test/" class="post-title-link" itemprop="url">未命名</a>
+            <a href="/2021/03/13/%E4%BD%BF%E7%94%A8Cryptdll%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6md5%E5%80%BC/" class="post-title-link" itemprop="url">使用Cryptdll计算文件md5值</a>
         </h2>
 
         <div class="post-meta">
@@ -180,7 +180,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-03-13 13:06:03 / 修改时间：13:06:18" itemprop="dateCreated datePublished" datetime="2021-03-13T13:06:03+08:00">2021-03-13</time>
+              <time title="创建时间：2021-03-13 15:56:16 / 修改时间：15:56:53" itemprop="dateCreated datePublished" datetime="2021-03-13T15:56:16+08:00">2021-03-13</time>
             </span>
 
           
@@ -194,78 +194,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>this is a test </p>
-<p><img src="/2021/03/13/test/image-20210313130617635.png" alt="image-20210313130617635"></p>
+          <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    ULONG i[<span class="number">2</span>];</span><br><span class="line">    ULONG buf[<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> in[<span class="number">64</span>];</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> digest[<span class="number">16</span>];</span><br><span class="line">&#125; MD5_CTX;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//定义函数指针</span></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(WINAPI* PMD5Init)</span><span class="params">(MD5_CTX* context)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(WINAPI* PMD5Final)</span><span class="params">(MD5_CTX* context)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(WINAPI* PMD5Update)</span><span class="params">(MD5_CTX* context, <span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>* input, <span class="keyword">unsigned</span> <span class="keyword">int</span> inlen)</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GetFileMD5</span><span class="params">(CString fileName, LPWSTR strBuf)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line"> </span><br><span class="line">    FILE* ff;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> nSize = <span class="number">1024</span>;</span><br><span class="line">    <span class="keyword">char</span>* rBuff = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>) * nSize);</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> rCount = <span class="number">0</span>;</span><br><span class="line">    MD5_CTX context;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//加载微软提供MD5计算的dll文件</span></span><br><span class="line">    HMODULE hdll = LoadLibrary(<span class="string">L&quot;Cryptdll.dll&quot;</span>);</span><br><span class="line">    PMD5Init m_pFuncMD5Init = <span class="literal">NULL</span>;</span><br><span class="line">    PMD5Final m_pFuncMD5Final = <span class="literal">NULL</span>;</span><br><span class="line">    PMD5Update m_pFuncMD5Update = <span class="literal">NULL</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (hdll == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;load dll Cryptdll faild\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获得相应的函数地址</span></span><br><span class="line">    m_pFuncMD5Init = (PMD5Init)GetProcAddress(hdll, <span class="string">&quot;MD5Init&quot;</span>);</span><br><span class="line">    m_pFuncMD5Final = (PMD5Final)GetProcAddress(hdll, <span class="string">&quot;MD5Final&quot;</span>);</span><br><span class="line">    m_pFuncMD5Update = (PMD5Update)GetProcAddress(hdll, <span class="string">&quot;MD5Update&quot;</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (!(m_pFuncMD5Update &amp;&amp; m_pFuncMD5Init &amp;&amp; m_pFuncMD5Final))</span><br><span class="line">    &#123;</span><br><span class="line">        FreeLibrary(hdll);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;get function faild\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//初始化context</span></span><br><span class="line">    ZeroMemory(&amp;context, <span class="keyword">sizeof</span>(MD5_CTX));</span><br><span class="line">    m_pFuncMD5Init(&amp;context);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//打开一个测试文件</span></span><br><span class="line">    <span class="keyword">if</span> (!(ff = _wfopen(fileName, <span class="string">L&quot;rb&quot;</span>)))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;open file faild\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (rCount = fread(rBuff, <span class="keyword">sizeof</span>(<span class="keyword">char</span>), nSize, ff))</span><br><span class="line">    &#123;</span><br><span class="line">        m_pFuncMD5Update(&amp;context, (<span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>*)rBuff, rCount);</span><br><span class="line">    &#125;</span><br><span class="line">    m_pFuncMD5Final(&amp;context);</span><br><span class="line">    <span class="comment">//此处下断点，调试状态从Watch中查看cnotext.digest域为文件MD5值</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="comment">//for (int i = 0; i &lt; 16; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf(&quot;%X&quot;, context.digest[i]);</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"> </span><br><span class="line">    WCHAR pbuf[<span class="number">32</span>];</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        swprintf(pbuf, <span class="number">32</span>, <span class="string">L&quot;%02X&quot;</span>, context.digest[i]);</span><br><span class="line">        <span class="comment">//sprintf(pbuf, &quot;%X&quot;, context.digest[i]);</span></span><br><span class="line">        wcsncat(strBuf, pbuf, <span class="number">33</span>);</span><br><span class="line">        <span class="comment">//wcsncat_s(strBuf, 32, pbuf, 2);</span></span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//printf(&quot;%s&quot;, strBuf);</span></span><br><span class="line">    fclose(ff);</span><br><span class="line">    <span class="built_in">free</span>(rBuff);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/13/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Enda">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="DATA or CODE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/13/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-13 13:01:45" itemprop="dateCreated datePublished" datetime="2021-03-13T13:01:45+08:00">2021-03-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
     </div>
@@ -346,9 +276,15 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -386,7 +322,7 @@
   <span class="author" itemprop="copyrightHolder">Enda</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
-  </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="50" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+  </div><script color="0,0,0" opacity="0.5" zIndex="-1" count="50" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
 
@@ -441,3 +377,6 @@
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
