@@ -155,7 +155,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/13/%E4%BD%BF%E7%94%A8Cryptdll%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6md5%E5%80%BC/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/14/%E5%AF%B9%E5%9B%BD%E5%86%85%E4%B8%80%E6%AC%BE%E9%98%B2%E5%8B%92%E7%B4%A2%E5%B7%A5%E5%85%B7%E7%9A%84%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -169,7 +169,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/03/13/%E4%BD%BF%E7%94%A8Cryptdll%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6md5%E5%80%BC/" class="post-title-link" itemprop="url">使用Cryptdll计算文件md5值</a>
+            <a href="/2021/03/14/%E5%AF%B9%E5%9B%BD%E5%86%85%E4%B8%80%E6%AC%BE%E9%98%B2%E5%8B%92%E7%B4%A2%E5%B7%A5%E5%85%B7%E7%9A%84%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">对国内一款防勒索工具的逆向</a>
         </h2>
 
         <div class="post-meta">
@@ -180,7 +180,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-03-13 15:56:16 / 修改时间：15:56:53" itemprop="dateCreated datePublished" datetime="2021-03-13T15:56:16+08:00">2021-03-13</time>
+              <time title="创建时间：2021-03-14 08:25:41 / 修改时间：12:51:41" itemprop="dateCreated datePublished" datetime="2021-03-14T08:25:41+08:00">2021-03-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">逆向分析</span></a>
+                </span>
             </span>
 
           
@@ -194,9 +203,186 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    ULONG i[<span class="number">2</span>];</span><br><span class="line">    ULONG buf[<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> in[<span class="number">64</span>];</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> digest[<span class="number">16</span>];</span><br><span class="line">&#125; MD5_CTX;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//定义函数指针</span></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(WINAPI* PMD5Init)</span><span class="params">(MD5_CTX* context)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(WINAPI* PMD5Final)</span><span class="params">(MD5_CTX* context)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(WINAPI* PMD5Update)</span><span class="params">(MD5_CTX* context, <span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>* input, <span class="keyword">unsigned</span> <span class="keyword">int</span> inlen)</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GetFileMD5</span><span class="params">(CString fileName, LPWSTR strBuf)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line"> </span><br><span class="line">    FILE* ff;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> nSize = <span class="number">1024</span>;</span><br><span class="line">    <span class="keyword">char</span>* rBuff = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>) * nSize);</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> rCount = <span class="number">0</span>;</span><br><span class="line">    MD5_CTX context;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//加载微软提供MD5计算的dll文件</span></span><br><span class="line">    HMODULE hdll = LoadLibrary(<span class="string">L&quot;Cryptdll.dll&quot;</span>);</span><br><span class="line">    PMD5Init m_pFuncMD5Init = <span class="literal">NULL</span>;</span><br><span class="line">    PMD5Final m_pFuncMD5Final = <span class="literal">NULL</span>;</span><br><span class="line">    PMD5Update m_pFuncMD5Update = <span class="literal">NULL</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (hdll == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;load dll Cryptdll faild\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获得相应的函数地址</span></span><br><span class="line">    m_pFuncMD5Init = (PMD5Init)GetProcAddress(hdll, <span class="string">&quot;MD5Init&quot;</span>);</span><br><span class="line">    m_pFuncMD5Final = (PMD5Final)GetProcAddress(hdll, <span class="string">&quot;MD5Final&quot;</span>);</span><br><span class="line">    m_pFuncMD5Update = (PMD5Update)GetProcAddress(hdll, <span class="string">&quot;MD5Update&quot;</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (!(m_pFuncMD5Update &amp;&amp; m_pFuncMD5Init &amp;&amp; m_pFuncMD5Final))</span><br><span class="line">    &#123;</span><br><span class="line">        FreeLibrary(hdll);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;get function faild\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//初始化context</span></span><br><span class="line">    ZeroMemory(&amp;context, <span class="keyword">sizeof</span>(MD5_CTX));</span><br><span class="line">    m_pFuncMD5Init(&amp;context);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//打开一个测试文件</span></span><br><span class="line">    <span class="keyword">if</span> (!(ff = _wfopen(fileName, <span class="string">L&quot;rb&quot;</span>)))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;open file faild\n&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (rCount = fread(rBuff, <span class="keyword">sizeof</span>(<span class="keyword">char</span>), nSize, ff))</span><br><span class="line">    &#123;</span><br><span class="line">        m_pFuncMD5Update(&amp;context, (<span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>*)rBuff, rCount);</span><br><span class="line">    &#125;</span><br><span class="line">    m_pFuncMD5Final(&amp;context);</span><br><span class="line">    <span class="comment">//此处下断点，调试状态从Watch中查看cnotext.digest域为文件MD5值</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="comment">//for (int i = 0; i &lt; 16; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf(&quot;%X&quot;, context.digest[i]);</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"> </span><br><span class="line">    WCHAR pbuf[<span class="number">32</span>];</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        swprintf(pbuf, <span class="number">32</span>, <span class="string">L&quot;%02X&quot;</span>, context.digest[i]);</span><br><span class="line">        <span class="comment">//sprintf(pbuf, &quot;%X&quot;, context.digest[i]);</span></span><br><span class="line">        wcsncat(strBuf, pbuf, <span class="number">33</span>);</span><br><span class="line">        <span class="comment">//wcsncat_s(strBuf, 32, pbuf, 2);</span></span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//printf(&quot;%s&quot;, strBuf);</span></span><br><span class="line">    fclose(ff);</span><br><span class="line">    <span class="built_in">free</span>(rBuff);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>本文是对国内一款防勒索工具的逆向分析，涉及逆向、脱壳、资源表重建等问题</p>
+<!--more--!>
+
+![image-20210314113545319](对国内一款防勒索工具的逆向分析/image-20210314113545319.png)
+
+> 来自卡饭论坛网友温馨小屋的自制勒索病毒测试，红色的为成功拦截
 
 
+
+有这么一款防勒索工具，非常小众，主要采用勒索诱饵的方式来捕获勒索病毒，体积只有1.5M,却经常在防勒索表现上击败一些大厂杀软。这款软件是付费的，免费也可以使用但是有弹窗，这篇文章就是关于对该软件逆向分析去弹窗的尝试。
+
+## 准备工作
+
+原程序每次开机都会弹窗，点击继续试用以后就可以关闭弹窗正常使用，这次的目的是去除这个弹窗。
+
+![image-20210314113850610](对国内一款防勒索工具的逆向分析/image-20210314113850610.png)
+
+这里先用EXEinfo查一下，发现是UPX壳，用UPX官方工具脱掉，好家伙，运行之后报错了。
+
+![image-20210314114604424](对国内一款防勒索工具的逆向分析/image-20210314114604424.png)
+
+异常位置在这里，ECX指向的位置不存在，看这个数值是一个以400000为基地址的VA，猜测是没有重定位，于是打开loadPE，去掉随机基址，正常运行。
+
+![image-20210314120407980](对国内一款防勒索工具的逆向分析/image-20210314120407980.png)
+
+![image-20210314120828538](对国内一款防勒索工具的逆向分析/image-20210314120828538.png)
+
+
+
+## 开始逆向
+
+在CreateWindowExA和CreateWindowExW都下上断点，按F9一次次断下来，观察是哪次出现了注册提醒弹窗，然后定位在第三次CreateWindowExA上，此时调用堆栈跟回去。
+
+![image-20210314121235983](对国内一款防勒索工具的逆向分析/image-20210314121235983.png)
+
+发现在这个创建窗口call上面有很多跳转，先试试有没有什么跳转可以避开这个创建窗口的call，发现上面这个jmp会把它跳过
+
+![image-20210314121605536](对国内一款防勒索工具的逆向分析/image-20210314121605536.png)
+
+而这个jmp是一个je跳过来的，Jmp上面的jne如果不成立也可以过来，但后续测试发现最早是会执行底下652DB813，而正常情况下是不跳转到jmp的，也就是继续向下执行，弹出注册窗口。
+
+![image-20210314122036234](对国内一款防勒索工具的逆向分析/image-20210314122036234.png)
+
+把这里的je直接改成无条件跳转试试，运行，发现这次不弹注册窗口了，甚至连托盘图标也变蓝色了（蓝色代表已注册用户，未注册显示的是红色）
+
+![image-20210314122755068](对国内一款防勒索工具的逆向分析/image-20210314122755068.png)
+
+![image-20210314122513704](对国内一款防勒索工具的逆向分析/image-20210314122513704.png)
+
+## 补丁
+
+接下来就是给文件打补丁了，上一步里观察标题栏可以知道我们修改的是一个叫RSBMTERREGVIEW.DLL的DLL，定位到这个文件，可知是瑞星之剑释放的一些文件，我本来想能否修改DLL之后扔到这个文件夹里面替换掉原文件，但文件被占用，而且每次关掉程序再开又会重新覆盖。所以只好修改资源文件。
+
+![image-20210314122922485](对国内一款防勒索工具的逆向分析/image-20210314122922485.png)
+
+用Resource Hacker打开，找到了这个DLL资源，替换成修改好的DLL，最后用UPX压缩回去，就得到了一个去弹窗的瑞星之剑。
+
+![image-20210314123906614](对国内一款防勒索工具的逆向分析/image-20210314123906614.png)
+
+![image-20210314124222742](对国内一款防勒索工具的逆向分析/image-20210314124222742.png)
+
+测试了几个勒索病毒样本，功能正常，全都拦下并且结束了病毒进程。
+
+![image-20210314124602708](对国内一款防勒索工具的逆向分析/image-20210314124602708.png)
+
+
+
+## 后记
+
+发现个小毛病，用UPX官方工具脱壳去随机基址后，托盘图标菜单点不出来了，如果换x64dbg脱壳，托盘图标就是正常的，但资源表还没解压缩，就得用FixRes修复重建资源表之后才能修改资源里面得DLL文件了。但这样做完最终要用UPX压回去又会报错。可能还是得把重定位表修复了吧。
+
+-->
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/13/%E5%AF%B9%E6%9F%90%E4%B8%AADNF%E8%BE%85%E5%8A%A9%E7%9A%84%E9%80%86%E5%90%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Enda">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DATA or CODE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/13/%E5%AF%B9%E6%9F%90%E4%B8%AADNF%E8%BE%85%E5%8A%A9%E7%9A%84%E9%80%86%E5%90%91/" class="post-title-link" itemprop="url">对某个DNF辅助的逆向</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-13 22:57:10 / 修改时间：23:34:13" itemprop="dateCreated datePublished" datetime="2021-03-13T22:57:10+08:00">2021-03-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%86%E5%90%91/" itemprop="url" rel="index"><span itemprop="name">逆向</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>对某个DNF辅助的逆向记录，以及记录易语言程序逆向技巧。</p>
+<!--more--!>
+
+## **前言**
+
+某天偶然在吾爱论坛上看到一个求破解帖子，附件是一个DNF辅助，于是手痒下载了进行一波逆向。
+
+程序界面如图，初步猜想是网络验证
+
+![image-20210313231300547](对某个DNF辅助的逆向/image-20210313231300547.png)
+
+
+
+有UPX壳，用UPX -d脱掉，开始一波分析
+
+
+
+## 无辅助工具分析：
+
+最后再介绍用辅助工具分析的方法，因为对于这个简单的软件，再用上辅助工具就过于简单了。这里我们先不借助易语言分析工具，直接逆向一波。
+
+点击登录辅助之后会弹出用户名密码不正确的弹框。
+
+![image-20210313231838985](对某个DNF辅助的逆向/image-20210313231838985.png)
+
+对MessageBox下断点没断下，再对MessageTimeOutW/A下断点，断在MessageTimeOutA上，栈回溯过去。
+
+![image-20210313232453023](对某个DNF辅助的逆向/image-20210313232453023.png)
+
+
+
+发现一小段错误提示的代码，往上找是哪里跳转过来的
+
+![image-20210313232604694](对某个DNF辅助的逆向/image-20210313232604694.png)
+
+是个条件跳转，但是改这里没有用，因为如果不跳转，往下继续走就会提示账号在非绑定地点登录
+
+![image-20210313232830281](对某个DNF辅助的逆向/image-20210313232830281.png)
+
+![image-20210313233006849](对某个DNF辅助的逆向/image-20210313233006849.png)
+
+往上翻了翻-->
       
     </div>
 
@@ -276,9 +462,15 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
