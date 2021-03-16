@@ -20,40 +20,43 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="title: 你真的会用x64dbg?使用技巧与实用插件合集date: 2021-03-15 13:34:43tags: 技巧 本文是针对刚开始接触X64dbg的新人写的实用技巧和插件合集">
+  <meta name="description" content="本文是针对刚开始接触X64dbg的新人写的实用技巧和插件合集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DATA or CODE">
-<meta property="og:url" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/index.html">
+<meta property="og:title" content="你真的会用x64dbg？使用技巧与实用插件合集">
+<meta property="og:url" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/index.html">
 <meta property="og:site_name" content="DATA or CODE">
-<meta property="og:description" content="title: 你真的会用x64dbg?使用技巧与实用插件合集date: 2021-03-15 13:34:43tags: 技巧 本文是针对刚开始接触X64dbg的新人写的实用技巧和插件合集">
+<meta property="og:description" content="本文是针对刚开始接触X64dbg的新人写的实用技巧和插件合集">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315175924169.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315181959902.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315191310329.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315202048027.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315204313937.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315194512658.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315204900054.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315205707651.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315195622821.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315210759399.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315211946599.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315213242007.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315223635268.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315230826558.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315232006979.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316075957615.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316100659281.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316104714915.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316103333586.png">
-<meta property="og:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316110431599.png">
-<meta property="article:published_time" content="2021-03-15T05:34:43.053Z">
-<meta property="article:modified_time" content="2021-03-16T03:33:03.973Z">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315175924169.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315181959902.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315191310329.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315202048027.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315204313937.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315194512658.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315204900054.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315205707651.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315195622821.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315210759399.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315211946599.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315213242007.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315223635268.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315230826558.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315232006979.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316075957615.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316100659281.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316104714915.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316103333586.png">
+<meta property="og:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316110431599.png">
+<meta property="article:published_time" content="2021-03-14T00:25:41.000Z">
+<meta property="article:modified_time" content="2021-03-16T03:37:36.038Z">
 <meta property="article:author" content="Enda">
+<meta property="article:tag" content="x64dbg">
+<meta property="article:tag" content="技巧">
+<meta property="article:tag" content="插件">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315175924169.png">
+<meta name="twitter:image" content="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315175924169.png">
 
-<link rel="canonical" href="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/">
+<link rel="canonical" href="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/">
 
 
 <script id="page-configurations">
@@ -66,7 +69,7 @@
   };
 </script>
 
-  <title> | DATA or CODE</title>
+  <title>你真的会用x64dbg？使用技巧与实用插件合集 | DATA or CODE</title>
   
 
 
@@ -181,7 +184,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -194,7 +197,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          你真的会用x64dbg？使用技巧与实用插件合集
         </h1>
 
         <div class="post-meta">
@@ -204,15 +207,24 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-03-15 13:34:43" itemprop="dateCreated datePublished" datetime="2021-03-15T13:34:43+08:00">2021-03-15</time>
+              <time title="创建时间：2021-03-14 08:25:41" itemprop="dateCreated datePublished" datetime="2021-03-14T08:25:41+08:00">2021-03-14</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-16 11:33:03" itemprop="dateModified" datetime="2021-03-16T11:33:03+08:00">2021-03-16</time>
+                <time title="修改时间：2021-03-16 11:37:36" itemprop="dateModified" datetime="2021-03-16T11:37:36+08:00">2021-03-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">使用技巧</span></a>
+                </span>
+            </span>
 
           
 
@@ -225,20 +237,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>title: 你真的会用x64dbg?使用技巧与实用插件合集<br>date: 2021-03-15 13:34:43<br>tags: 技巧</p>
-<p>本文是针对刚开始接触X64dbg的新人写的实用技巧和插件合集</p>
+        <p>本文是针对刚开始接触X64dbg的新人写的实用技巧和插件合集</p>
 <span id="more"></span>
 
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>萌新一个，接触逆向时间不长，但因为很喜欢x64dbg这款调试器，所以花了一些时间去了解，x64dbg的这类帖子相对较少，本贴的初衷是希望其他新人在学习的时候可以多一些参考，少一些时间精力的浪费。希望大家为我的帖子指正错误和做补充。</p>
 <p>以下均基于Mar 12 2021版本x64dbg官方版本，可到官方网站直接下载</p>
 <p>官方网站：<a target="_blank" rel="noopener" href="https://x64dbg.com/">https://x64dbg.com/</a></p>
 <h2 id="第一次运行"><a href="#第一次运行" class="headerlink" title="第一次运行"></a>第一次运行</h2><p>双击x96dbg，出现三个弹窗，会生成x96dbg.ini文件。当你需要把整个程序文件夹移动到其他路径时，最好把这个ini删除，重新双击让它再生成。当你需要把它加到发送到菜单中的时候，也推荐添加x96dbg，它会自动选择用x32还是x64dbg打开。</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315175924169.png" alt="image-20210315175924169"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315175924169.png" alt="image-20210315175924169"></p>
 <h2 id="你需要做些什么设置"><a href="#你需要做些什么设置" class="headerlink" title="你需要做些什么设置"></a>你需要做些什么设置</h2><h3 id="外观"><a href="#外观" class="headerlink" title="外观"></a>外观</h3><ul>
 <li>字体大小调整    选项——外观——字体——最右边那个数字（图右）（我个人用12）</li>
 <li>主题选择            选项——主题——选择你喜欢的（图左），也可以在Github搜索x64dbg theme，或者百度搜索x64dbg 配色，使用别人的配色方案文件</li>
 </ul>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315181959902.png" alt="image-20210315181959902"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315181959902.png" alt="image-20210315181959902"></p>
 <h3 id="选项设置"><a href="#选项设置" class="headerlink" title="选项设置"></a>选项设置</h3><ul>
 <li><p>事件    </p>
 <p>推荐萌新只勾选<strong>入口断点</strong>（这样相当于OD设置为 第一次暂停于主模块入口点）</p>
@@ -253,7 +264,7 @@
 <p> <strong>仅在CIP处显示自动注释</strong>——勾选之后界面会更整洁，该有的自动注释也还是有的，自行体验取舍</p>
 <p> <strong>模块名最长长度</strong>——默认-1不限制，如果遇到比较长的文件名，调试起来界面观感会比较差（图左），OD的限制长度为8，自行取舍。</p>
 <p> <strong>值前加0x前缀</strong>——x64dbg里默认以16进制显示数值（不显示0x），如果你需要表示十进制，可以在前面加点，汇编里输入加点10进制需要设置XEDparse引擎（图右）。</p>
-<p> <img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315191310329.png" alt="image-20210315191310329"></p>
+<p> <img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315191310329.png" alt="image-20210315191310329"></p>
 </li>
 <li><p>图形界面</p>
 <p>其他选项根据个人需要调整，一般保持默认，特别说明一项</p>
@@ -274,13 +285,13 @@
 </li>
 <li><p>如果你添加 <code>%-????-%</code>，则它将执行无论你放在何处的 <code>???? </code>字符串格式。示例：<code>%-&#123;cip&#125;-% </code>将会用 <code>cip</code> 的十六进制值替换。 </p>
 <p><strong>所以你可以这样 “C:\Tools\DIE\die.exe” %DEBUGGEE%  添加你常用的工具（记得路径加双引号），然后把收藏夹——收藏工具箱选上。点击Die图标，将会启动并且分析当前在调试的模块。这样的方法好过安装什么PE查看器插件，让专业的工具做专业的事</strong></p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315202048027.png" alt="image-20210315202048027"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315202048027.png" alt="image-20210315202048027"></p>
 </li>
 </ul>
 <ul>
 <li><h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a><strong>流程图</strong></h2><p> 在反汇编窗口按下G键切换到流程图，再按G回来。建议配合图形缩放模式设置，可以用Ctrl+滚轮进行缩放。</p>
 <p>右键点击脱离后，可以与反汇编窗口同时使用，让我想起ret-sync那个插件，后面插件篇再说（我一般还是用IDA，但万一有人喜欢这种呢）</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315204313937.png" alt="image-20210315204313937"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315204313937.png" alt="image-20210315204313937"></p>
 </li>
 <li><h2 id="Ctrl-G-跳转到"><a href="#Ctrl-G-跳转到" class="headerlink" title="Ctrl+G 跳转到"></a>Ctrl+G <strong>跳转到</strong></h2></li>
 <li><p>可以直接输入API，会自动补全。默认是输入VA，如果要输入RVA需要这样： <strong>:$RVA</strong></p>
@@ -290,16 +301,16 @@
 </ul>
 <ul>
 <li><h2 id="按H键进入高亮模式"><a href="#按H键进入高亮模式" class="headerlink" title="按H键进入高亮模式"></a>按H键进入<strong>高亮模式</strong></h2></li>
-<li><p>此时单击需要高亮显示的内容即可高亮显示，再次按下H，点击空白处可以取消。（也可以设置一直启用高亮，但有误点的问题）<br><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315194512658.png" alt="image-20210315194512658"></p>
+<li><p>此时单击需要高亮显示的内容即可高亮显示，再次按下H，点击空白处可以取消。（也可以设置一直启用高亮，但有误点的问题）<br><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315194512658.png" alt="image-20210315194512658"></p>
 </li>
 </ul>
 <ul>
 <li><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a><strong>数据库</strong></h2><p>(或者是Database)</p>
 <p>遇到过几次x64dbg数据丢失，写了很多注释就没了，这种情况千万不要慌张，因为你每次关闭x64dbg自动保存的时候，都会把上次的数据文件做备份(.bak)，这时候可以试着点击<strong>还原备份数据库</strong>。</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315204900054.png" alt="image-20210315204900054"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315204900054.png" alt="image-20210315204900054"></p>
 </li>
 <li><h2 id="x64dbg计算器"><a href="#x64dbg计算器" class="headerlink" title="x64dbg计算器"></a><strong>x64dbg计算器</strong></h2><p>个人觉得比系统自带计算器好用，可以一边调试一边计算（非模态+置顶），不用切来切去，支持x64dbg的各种表达式</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315205707651.png" alt="image-20210315205707651"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315205707651.png" alt="image-20210315205707651"></p>
 </li>
 </ul>
 <ul>
@@ -307,17 +318,17 @@
 <li><p>会显示汇编指令对应的解释，对于初学者很有帮助，有一个王苏汉化的版本，是将这些帮助文本也完全汉化了的。（自行搜索）</p>
 </li>
 </ul>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315195622821.png" alt="image-20210315195622821"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315195622821.png" alt="image-20210315195622821"></p>
 <ul>
 <li><h2 id="文件——改变命令行"><a href="#文件——改变命令行" class="headerlink" title="文件——改变命令行"></a>文件——<strong>改变命令行</strong></h2></li>
 <li><p>可以支持带参数调试</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315210759399.png" alt="image-20210315210759399"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315210759399.png" alt="image-20210315210759399"></p>
 </li>
 </ul>
 <ul>
 <li><h2 id="复制各种格式的数据"><a href="#复制各种格式的数据" class="headerlink" title="复制各种格式的数据"></a><strong>复制各种格式的数据</strong></h2></li>
 <li><p>选中你要的部分——右键二进制——编辑——复制数据</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315211946599.png" alt="image-20210315211946599"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315211946599.png" alt="image-20210315211946599"></p>
 </li>
 </ul>
 <ul>
@@ -328,7 +339,7 @@
 </ul>
 <ul>
 <li><h2 id="ESP硬件断点"><a href="#ESP硬件断点" class="headerlink" title="ESP硬件断点"></a>ESP硬件断点</h2><p>寄存器窗口空白处右键</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315213242007.png" alt="image-20210315213242007"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315213242007.png" alt="image-20210315213242007"></p>
 <ul>
 <li><h2 id="自动跟踪"><a href="#自动跟踪" class="headerlink" title="自动跟踪"></a>自动跟踪</h2><p>简单说一下使用方法，因为我的了解也不是很深</p>
 <p>右键——追踪记录——启动运行跟踪——点击菜单栏 跟踪(N)——步进\步过直到条件满足</p>
@@ -339,7 +350,7 @@
 <p>这里顺带一说，x64dbg的搜索结果，内存窗口，跟踪结果，几乎所有带地址的地方，都是支持直接F2设置断点的，各位可以多加利用提高效率。</p>
 </li>
 </ul>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315223635268.png" alt="image-20210315223635268"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315223635268.png" alt="image-20210315223635268"></p>
 <h1 id="插件推荐篇"><a href="#插件推荐篇" class="headerlink" title="插件推荐篇"></a><strong>插件推荐篇</strong></h1><p>以下主要详细介绍我平时常用的插件，建议大家按照需求来安装，这里只提供GitHub上的插件合集，其他插件可以到作者原帖下载。（插件放在release\x32或者x64\plugins目录下，以.dp32或.dp64结尾）</p>
 <h2 id="Scylla（脱壳与导入表修复）"><a href="#Scylla（脱壳与导入表修复）" class="headerlink" title="Scylla（脱壳与导入表修复）"></a><strong>Scylla</strong>（脱壳与导入表修复）</h2><ul>
 <li><p>自带的插件，个人觉得比OD+ImpREC更方便快捷</p>
@@ -347,11 +358,11 @@
 <p>  修复导入表：点击IAT Autosearch，有可能提示：高级搜索结果和普通搜索结果不同，是否使用高级搜索结果。一般都选是，接着点Get Imports，自动获取需要修复的函数。我遇到过高级搜索反而搜不到的情况，这时候可以试试点否之后再点Get Imports。确认结果无误后点Fix Dump，选中刚才Dump出的文件，会生成SCY结尾的文件。</p>
 </li>
 </ul>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315230826558.png" alt="image-20210315230826558"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315230826558.png" alt="image-20210315230826558"></p>
 <h2 id="xAnalyzer（代码分析辅助）"><a href="#xAnalyzer（代码分析辅助）" class="headerlink" title="xAnalyzer（代码分析辅助）"></a><strong>xAnalyzer</strong>（代码分析辅助）</h2><p><a target="_blank" rel="noopener" href="https://github.com/ThunderCls/xAnalyzer">https://github.com/ThunderCls/xAnalyzer</a></p>
 <p>该插件对调试程序的API函数调用进行检测，自动添加函数定义，参数和数据类型以及其他补充信息，安装以后可以让x64dbg与OllyDbg的使用体验更接近。</p>
 <p>效果如图，可以在插件菜单里把自动分析（Automatic Analysis）打开。我个人不喜欢插件自动添加很多注释，会让页面看起来很乱，所以一般在需要分析的时候通过右键菜单来让它分析当前函数。</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315232006979.png" alt="image-20210315232006979"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210315232006979.png" alt="image-20210315232006979"></p>
 <h2 id="SwissArmyKnife（导入Map文件）"><a href="#SwissArmyKnife（导入Map文件）" class="headerlink" title="SwissArmyKnife（导入Map文件）"></a><strong>SwissArmyKnife</strong>（导入Map文件）</h2><p><a target="_blank" rel="noopener" href="https://github.com/Nukem9/SwissArmyKnife">https://github.com/Nukem9/SwissArmyKnife</a></p>
 <p>没什么好解释的，分析C程序的时候用IDA生成MAP文件，然后用这个插件加载。分析delphin程序推荐用Interactive Delphi Reconstructor先分析，再生成MAP文件用，还有其他程序也同样。MAP文件可以让你的分析进度大大加快，减少分析一些已知的库函数。</p>
 <h2 id="x64dbg-tol（中文搜索支持）"><a href="#x64dbg-tol（中文搜索支持）" class="headerlink" title="x64dbg_tol（中文搜索支持）"></a><strong>x64dbg_tol</strong>（中文搜索支持）</h2><p><a target="_blank" rel="noopener" href="https://bbs.pediy.com/thread-261942-1.htm">https://bbs.pediy.com/thread-261942-1.htm</a></p>
@@ -359,7 +370,7 @@
 <h2 id="ScyllaHide（反反调试）"><a href="#ScyllaHide（反反调试）" class="headerlink" title="ScyllaHide（反反调试）"></a>ScyllaHide（反反调试）</h2><p><a target="_blank" rel="noopener" href="https://github.com/x64dbg/ScyllaHide">https://github.com/x64dbg/ScyllaHide</a></p>
 <p>x64dbg官方开发的开源反反调试插件，同类插件也有好几个，但官方的用得人比较多且更新快，所以这边推荐官方的插件。使用方法也很简单，插件菜单——Options——Loaded里可以选择自带的绕过方案（过一般的反调试可以用Basic甚至直接用自带的 调试——高级——隐藏调试器）</p>
 <p>试了下VM3.x的反调试可以用自带的VM方案直接过掉（反而OD的StrongOD插件不行）</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316075957615.png" alt="image-20210316075957615"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316075957615.png" alt="image-20210316075957615"></p>
 <h2 id="Ret-Sync-（IDA-x64dbg-OD-同步调试插件）"><a href="#Ret-Sync-（IDA-x64dbg-OD-同步调试插件）" class="headerlink" title="Ret-Sync （IDA x64dbg\OD 同步调试插件）"></a><strong>Ret-Sync</strong> （IDA x64dbg\OD 同步调试插件）</h2><p><a target="_blank" rel="noopener" href="https://github.com/bootleg/ret-sync">https://github.com/bootleg/ret-sync</a></p>
 <p><a target="_blank" rel="noopener" href="https://bbs.pediy.com/thread-252634.htm">https://bbs.pediy.com/thread-252634.htm</a></p>
 <p>可以让IDA和x64dbg\OD\windbg进行同步调试，支持在IDA中直接进行单步、下断点、运行等操作，x64dbg将会与IDA保持同步，提高你调试效率的神器，关于安装、使用说明可以参考官方github说明（更详细）和看雪的帖子。</p>
@@ -369,17 +380,17 @@
 <p>一个在装了IDA的机器上，放在你需要调试的程序目录下（跟IDA生成的IDB文件放一起）</p>
 <p>一个放在安装了动态调试器的机器上，用户文件夹根目录（C:\Users\你的用户名）</p>
 <p>这样就可以实现虚拟机和实体机同步调试了</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316100659281.png" alt="image-20210316100659281"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316100659281.png" alt="image-20210316100659281"></p>
 <h2 id="E-ApiBreak（常用断点设置）"><a href="#E-ApiBreak（常用断点设置）" class="headerlink" title="E-ApiBreak（常用断点设置）"></a><strong>E-ApiBreak</strong>（常用断点设置）</h2><p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1384349">https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1384349</a></p>
 <p>OD上常用的一个工具，现在x64dbg也有了。简单易用，不多说明。</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316104714915.png" alt="image-20210316104714915"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316104714915.png" alt="image-20210316104714915"></p>
 <h2 id="E-Debug（分析易语言程序必备）"><a href="#E-Debug（分析易语言程序必备）" class="headerlink" title="E-Debug（分析易语言程序必备）"></a><strong>E-Debug</strong>（分析易语言程序必备）</h2><p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1374290">https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1374290</a></p>
 <p>原作者github<a target="_blank" rel="noopener" href="https://github.com/fjqisba/E-debug-plus">https://github.com/fjqisba/E-debug-plus</a></p>
 <p>最开始我在OD上用这个插件，可以让分析易语言的效率倍增。最近发现有人移植到x64dbg了，在此推荐一波，打开后会自动识别易语言库函数并且自动注释，简单易用。</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316103333586.png" alt="image-20210316103333586"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316103333586.png" alt="image-20210316103333586"></p>
 <h2 id="HotSpots（用来寻找事件断点）"><a href="#HotSpots（用来寻找事件断点）" class="headerlink" title="HotSpots（用来寻找事件断点）"></a><strong>HotSpots</strong>（用来寻找事件断点）</h2><p><a target="_blank" rel="noopener" href="https://github.com/ThunderCls/xHotSpots">https://github.com/ThunderCls/xHotSpots</a></p>
 <p>下拉框选择对应语言，按下按钮可以在按钮事件处理函数 下断点。</p>
-<p><img src="/2021/03/15/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316110431599.png" alt="image-20210316110431599"></p>
+<p><img src="/2021/03/14/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8x64dbg-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E4%B8%8E%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6%E5%90%88%E9%9B%86/image-20210316110431599.png" alt="image-20210316110431599"></p>
 </li>
 </ul>
 <p>以上就是一些适合萌新的实用插件推荐，其他还有一些没提到的好用的插件，各位可以在底下补充。当然随着你的学习，后面也会需要用到其他类型的插件，甚至自己写插件。可以到官方的插件页面逛逛（<a target="_blank" rel="noopener" href="http://plugins.x64dbg.com/%EF%BC%89%EF%BC%8C%E7%BF%BB%E7%BF%BB%E5%AE%98%E6%96%B9%E7%9A%84%E6%89%8B%E5%86%8C%E3%80%82">http://plugins.x64dbg.com/），翻翻官方的手册。</a></p>
@@ -393,17 +404,22 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/x64dbg/" rel="tag"># x64dbg</a>
+              <a href="/tags/%E6%8A%80%E5%B7%A7/" rel="tag"># 技巧</a>
+              <a href="/tags/%E6%8F%92%E4%BB%B6/" rel="tag"># 插件</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2021/03/14/%E5%AF%B9%E5%9B%BD%E5%86%85%E4%B8%80%E6%AC%BE%E9%98%B2%E5%8B%92%E7%B4%A2%E5%B7%A5%E5%85%B7%E7%9A%84%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/" rel="prev" title="对国内一款防勒索工具的逆向">
-      <i class="fa fa-chevron-left"></i> 对国内一款防勒索工具的逆向
-    </a></div>
       <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/14/%E5%AF%B9%E5%9B%BD%E5%86%85%E4%B8%80%E6%AC%BE%E9%98%B2%E5%8B%92%E7%B4%A2%E5%B7%A5%E5%85%B7%E7%9A%84%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/" rel="next" title="对国内一款防勒索工具的逆向">
+      对国内一款防勒索工具的逆向 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -484,13 +500,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
